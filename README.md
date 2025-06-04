@@ -4,7 +4,7 @@
 - Support for regex pattern matching for domains
 - DNS caching for performance
 - Detailed statistics reporting
-- Cross-platform support (Linux, macOS, Windows)CKS5 Proxy
+- Cross-platform support (Linux, macOS, Windows) SOCKS5 Proxy
 
 A lightweight SOCKS5 proxy that selectively routes traffic for specific domains through an optional upstream SOCKS5 proxy to bypass Deep Packet Inspection (DPI). Can also operate without an upstream proxy as a regular SOCKS5 server.
 
