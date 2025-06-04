@@ -1,0 +1,51 @@
+# DPI Bypass SOCKS5 Proxy Configuration
+
+# Local SOCKS5 server settings
+socks5:
+  listen_addr: "0.0.0.0:10900"
+  username: "" # Optional, leave empty for no authentication
+  password: "" # Optional, leave empty for no authentication
+  timeout_seconds: 30 # Connection timeout in seconds (0 to disable)
+
+# Upstream SOCKS5 proxy (optional - if not provided, direct connections will be used)
+upstream:
+  socks5_addr: ""  # Leave empty to use direct connections
+
+# DNS settings
+dns:
+  server: "8.8.8.8:53"
+
+# Routing mode (default: false)
+# If true, routes ALL traffic through proxy EXCEPT specified domains/CIDRs
+# If false, routes ONLY matched domains/CIDRs through proxy
+inverse_mode: false
+
+# Target domains for routing (match by substring)
+domains:
+  - example.com
+  - restricted-site.com
+
+# Target domains for routing using regex patterns
+# These will always be treated as regex patterns regardless of use_regex setting
+domains_regex:
+  - "^.*\\.google\\.com$"
+  - "^api\\..+\\.com$"
+
+# Target IP ranges for routing (CIDR notation)
+cidrs:
+  - "192.168.1.0/24" 
+  - "10.0.0.0/8"
+  - "91.108.56.0/22"
+  - "91.108.4.0/22"
+  - "91.108.8.0/22"
+  - "91.108.16.0/22"
+  - "91.108.12.0/22"
+  - "149.154.160.0/20"
+  - "91.105.192.0/23"
+  - "91.108.20.0/22"
+  - "185.76.151.0/24"
+  - "2001:b28:f23d::/48"
+  - "2001:b28:f23f::/48"
+  - "2001:67c:4e8::/48"
+  - "2001:b28:f23c::/48"
+  - "2a0a:f280::/32"

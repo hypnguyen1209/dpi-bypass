@@ -1,0 +1,22 @@
+# DPI Bypass Rules File
+# This file contains routing rules for the DPI bypass proxy
+# Lines starting with # are comments
+
+# Domain rules (substring matching)
+# Format: domain:<domain-pattern>
+domain:example.com
+domain:restricted-site.org
+domain:banned-service.net
+domain:.facebook.com
+
+# Regex rules (regular expression matching)
+# Format: regex:<regex-pattern>
+# Note: Requires -regex flag or use_regex: true in config.yml
+regex:^.*\.google\.com$
+regex:^api\..*\.com$
+
+# CIDR rules (IP range matching)
+# Format: cidr:<ip-cidr>
+cidr:192.168.1.0/24
+cidr:10.0.0.0/8
+cidr:172.16.0.0/12
